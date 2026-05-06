@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правовой Статус | Юридический центр</title>
+    <!-- Подключение шрифтов Montserrat & Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Jost', 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #0a1c2f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .service-card h3, .card-price, nav a, button, .btn-card, .advantage-item strong {
+            font-family: 'Montserrat', 'Jost', sans-serif;
+        }
+
+        p, li, .review-card, input, textarea, .badge-cert, footer, .card-price {
+            font-family: 'Jost', 'Montserrat', sans-serif;
+        }
+
+        /* синяя минималистичная палитра */
+        :root {
+            --blue-deep: #0a2b4e;
+            --blue-mid: #1e4a76;
+            --blue-soft: #3b82f6;
+            --blue-light: #eef4ff;
+            --blue-gray: #f5f9ff;
+            --gray-border: #e2e8f0;
+            --text-dark: #0f172a;
+            --text-muted: #334155;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--gray-border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(2px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--blue-deep);
+            font-size: 1rem;
+            transition: color 0.2s;
+            letter-spacing: -0.2px;
+        }
+
+        nav a:hover {
+            color: var(--blue-soft);
+        }
+
+        /* контейнеры и сетка */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .text {
+            flex: 1 1 280px;
+        }
+
+        .text img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 32px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            display: block;
+            margin: 0 auto;
+            background: var(--blue-light);
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--blue-deep);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        section {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 2rem 2rem;
+            background: white;
+            border-radius: 32px;
+        }
+
+        ul, .text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .text ul li, section ul li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .text ul li::before, section ul li::before {
+            content: "●";
+            color: var(--blue-soft);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+        }
+
+        /* преимущества сетка */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .advantage-item {
+            background: var(--blue-gray);
+            padding: 1.25rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--blue-soft);
+            font-weight: 500;
+        }
+
+        /* карточки услуг */
+        .services {
+            background: var(--blue-gray);
+            border-radius: 32px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--gray-border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 35, 70, 0.1);
+            border-color: var(--blue-soft);
+        }
+
+        .card-icon {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--blue-deep);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .card-price {
+            font-weight: 700;
+            color: var(--blue-mid);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            font-family:  'Jost', sans-serif;
+        }
+
+        .btn-card {
+            background: transparent;
+            border: 1.5px solid var(--blue-soft);
+            color: var(--blue-soft);
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.9rem;
+            width: 100%;
+            font-family: 'Montserrat',  sans-serif;
+        }
+
+        .btn-card:hover {
+            background: var(--blue-soft);
+            color: white;
+        }
+
+        /* форма */
+        form {
+            background: var(--blue-gray);
+            padding: 2rem;
+            border-radius: 32px;
+            margin-top: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--gray-border);
+            border-radius: 24px;
+            font-size: 1rem;
+            background: white;
+            transition: 0.2s;
+            font-family: 'Jost', sans-serif;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--blue-soft);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+        }
+
+        button[type="submit"] {
+            background: var(--blue-deep);
+            color: white;
+            border: none;
+            padding: 0.9rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            font-family: 'Montserrat' sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        button[type="submit"]:hover {
+            background: var(--blue-mid);
+        }
+
+        footer {
+            background: #fafcff;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--gray-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--gray-border);
+            margin-bottom: 1rem;
+        }
+
+        .reviews-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .review-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            flex: 1 1 260px;
+            border: 1px solid var(--gray-border);
+            font-weight: 400;
+        }
+
+        .review-card strong {
+            color: var(--blue-deep);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .badge-cert {
+            background: var(--blue-light);
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                flex-direction: column;
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <!-- Блок hero по разметке -->
+    <section class="container" style="padding-top: 1rem;">
+        <div class="text">
+            <h1>Правовой Статус</h1>
+            <p>Юридический центр — многопрофильная компания, где работают как постоянные, так и приглашённые адвокаты и юристы.</p>
+        </div>
+        <div class="text">
+            <img src="lega.jpg">
+        </div>
+    </section>
+
+    <!-- Что вы получаете? -->
+    <section style="background: var(--blue-gray);">
+        <h2>Что вы получаете?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">Юридическая консультация</strong> — это не просто разговор. Мы анализируем документы, даём письменное заключение и стратегию.</p>
+        <ul style="margin-top: 1rem;">
+            <li>Для кого: физлица, ИП, ООО, самозанятые.</li>
+            <li>Как работает: оставляете заявку → юрист перезванивает → изучаем вопрос → готовим решение.</li>
+            <li>Форматы: аудиозвонок, видеоконференция, личный приём.</li>
+        </ul>
+    </section>
+
+    <!-- УСЛУГИ В КАРТОЧКАХ -->
+    <section class="services">
+        <h2>Наши услуги</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="card-icon"></div>
+                <h3>Консультации по гражданскому праву</h3>
+                <p>Помощь в решении споров, связанных с договорами, наследством, недвижимостью и другими гражданско‑правовыми вопросами.</p>
+                <div class="card-price">от 1 500 ₽</div>
+                <button class="btn-card">Получить консультацию</button>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"></div>
+                <h3>Судебное представительство</h3>
+                <p>Полное сопровождение в судах всех инстанций: подготовка документов, участие в заседаниях, обжалование решений.</p>
+                <div class="card-price">от 5 000 ₽</div>
+                <button class="btn-card">Подробнее</button>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"></div>
+                <h3>Составление документов</h3>
+                <p>Подготовка договоров, претензий, исковых заявлений, жалоб и других юридических документов.</p>
+                <div class="card-price">от 2 000 ₽/документ</div>
+                <button class="btn-card">Заказать</button>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon"></div>
+                <h3>Корпоративное право</h3>
+                <p>Регистрация и ликвидация ООО, внесение изменений в учредительные документы, сопровождение сделок.</p>
+                <div class="card-price">от 3 500 ₽/услуга</div>
+                <button class="btn-card">Консультация</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section>
+        <h2>Почему мы лучше других?</h2>
+        <div class="advantages-grid">
+            <div class="advantage-item"> Первая консультация — бесплатно</strong></div>
+            <div class="advantage-item"> Фиксированная цена — без доплат в процессе</div>
+            <div class="advantage-item"> Юрист закрепляется за вами и ведёт дело до конца</div>
+            <div class="advantage-item"> Работаем по договору — вы защищены</div>
+            <div class="advantage-item"> Отвечаем в мессенджерах даже после консультации</div>
+        </div>
+    </section>
+
+    <!-- ДОВЕРИЕ: ОТЗЫВЫ, СЕРТИФИКАТЫ -->
+    <section style="background: var(--blue-gray);">
+        <h2>Нам доверяют</h2>
+        <div class="reviews-block">
+            <div class="review-card">
+                <strong>Игорь, владелец кофейни:</strong><br>
+                «Юрист помог избежать штрафа от трудовой инспекции. Все быстро и чётко. Рекомендую!»
+            </div>
+            <div class="review-card">
+                <strong>Светлана, развод:</strong><br>
+                «Сделали всё дистанционно, я даже не ходила в суд. Спасибо за алименты и раздел квартиры.»
+            </div>
+            <div class="review-card">
+                <strong>Сертификат:</strong> Член Ассоциации юристов России<br>
+                <span class="badge-cert">🎓 Регистрационное свидетельство № 240/Ю</span>
+                <p style="margin-top: 0.6rem; font-size: 0.85rem;">* документ подтверждает высокий стандарт качества</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЦЕЛЕВОЕ ДЕЙСТВИЕ (CTA ФОРМА) -->
+    <section>
+        <h2>Оставьте заявку — получите бесплатную консультацию юриста</h2>
+        <p>Подберём время, ответим на вопросы, подскажем документы. Никакой рекламы, только помощь.</p>
+        
+        <form action="#" method="post">
+            <label for="name_lead"><strong>Ваше имя:</strong></label>
+            <input type="text" id="name_lead" name="name_lead" placeholder="Например, Анна" required style="margin-top: 0.3rem;">
+
+            <label for="phone_lead" style="margin-top: 1.2rem; display: block;"><strong>Телефон или Telegram:</strong></label>
+            <input type="tel" id="phone_lead" name="phone_lead" placeholder="+7 999 123-45-67" required>
+
+            <label for="question" style="margin-top: 1.2rem; display: block;"><strong>Коротко опишите вопрос:</strong></label>
+            <textarea id="question" name="question" rows="3" placeholder="спор с соседями / договор аренды / развод / налоги..."></textarea>
+
+            <button type="submit" style="margin-top: 1.8rem;">Получить консультацию бесплатно</button>
+        </form>
+        <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">Нажимая на кнопку, вы соглашаетесь с обработкой данных. Конфиденциально.</p>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <hr>
+        <p>© 2026 Юридические услуги </p>
+        <p>Контакты: <strong>info@urist-landing.ru</strong> | Телефон: +7 (999) 456-78-90</p>
+       
+        
+
+</body>
+</html>
+<script>
+    // ==============================
+    // 1. ЯКОРНАЯ НАВИГАЦИЯ (плавный скролл)
+    // ==============================
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // ==============================
+    // 2. КНОПКИ В КАРТОЧКАХ УСЛУГ
+    // ==============================
+    document.querySelectorAll('.btn-card').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const formSection = document.querySelector('section:has(form)');
+            const toast = document.getElementById('serviceToast');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                // fallback, если секции нет — покажем toast
+                showToast('📞 Выберите услугу и оставьте заявку в форме ниже', '#3b82f6');
+            }
+        });
+    });
+
+    // ==============================
+    // 3. ФОРМА ОБРАТНОЙ СВЯЗИ
+    // ==============================
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name_lead').value.trim();
+            const phone = document.getElementById('phone_lead').value.trim();
+
+            if (!name) {
+                showToast('⚠️ Пожалуйста, введите ваше имя', '#ef4444');
+                return;
+            }
+            if (!phone) {
+                showToast('⚠️ Пожалуйста, введите телефон или Telegram', '#ef4444');
+                return;
+            }
+
+            // Успех
+            showToast('✅ Спасибо, ' + name + '! Мы свяжемся с вами в ближайшее время.', '#22c55e');
+            form.reset();
+        });
+    }
+
+    // ==============================
+    // ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ TOAST
+    // ==============================
+    function showToast(message, bgColor = '#3b82f6') {
+        // удаляем старый toast, если есть
+        const old = document.getElementById('dynamicToast');
+        if (old) old.remove();
+
+        const toast = document.createElement('div');
+        toast.id = 'dynamicToast';
+        toast.textContent = message;
+        Object.assign(toast.style, {
+            position: 'fixed',
+            top: '30px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: bgColor,
+            color: 'white',
+            padding: '16px 28px',
+            borderRadius: '60px',
+            fontWeight: '600',
+            fontSize: '1rem',
+            fontFamily: 'Jost, sans-serif',
+            zIndex: '9999',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+            opacity: '0',
+            transition: 'opacity 0.3s ease',
+            pointerEvents: 'none',
+            maxWidth: '90vw',
+            textAlign: 'center'
+        });
+        document.body.appendChild(toast);
+
+        // анимация появления
+        requestAnimationFrame(() => {
+            toast.style.opacity = '1';
+        });
+
+        // скрыть через 4 секунды
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 400);
+        }, 4000);
+    }
+</script>
