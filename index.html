@@ -669,6 +669,172 @@
         padding: 2rem 1.5rem;
     }
 }
+
+
+
+    /* =========================================
+   ULTRA MOBILE 350x600 OPTIMIZATION
+========================================= */
+@media (max-width: 350px), (max-height: 600px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    body {
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    /* HEADER */
+    header {
+        padding: 0.6rem 0.5rem;
+    }
+
+    nav ul {
+        gap: 0.4rem;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.72rem;
+    }
+
+    /* CONTAINERS */
+    .container,
+    section {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0.9rem;
+        border-radius: 16px;
+    }
+
+    .container {
+        gap: 1rem;
+    }
+
+    /* HERO */
+    h1 {
+        font-size: 1.45rem;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.7rem;
+    }
+
+    p,
+    li {
+        font-size: 0.82rem;
+    }
+
+    .text img {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    /* SERVICES */
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+
+    .service-card {
+        padding: 0.9rem;
+        border-radius: 16px;
+    }
+
+    .service-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .service-card p {
+        font-size: 0.78rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .card-price {
+        font-size: 0.9rem;
+    }
+
+    .btn-card {
+        font-size: 0.78rem;
+        padding: 0.65rem;
+    }
+
+    /* ADVANTAGES */
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .advantage-item {
+        padding: 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 14px;
+    }
+
+    /* REVIEWS */
+    .reviews-block {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    .review-card {
+        padding: 0.8rem;
+        border-radius: 14px;
+        font-size: 0.78rem;
+    }
+
+    /* FORM */
+    form {
+        padding: 0.9rem;
+        border-radius: 16px;
+    }
+
+    input,
+    textarea {
+        padding: 0.7rem;
+        font-size: 16px;
+        border-radius: 14px;
+    }
+
+    textarea {
+        rows: 2;
+    }
+
+    button[type="submit"] {
+        padding: 0.8rem;
+        font-size: 0.82rem;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 1rem 0.7rem;
+        font-size: 0.7rem;
+    }
+
+    /* TOAST */
+    #dynamicToast {
+        width: calc(100% - 20px) !important;
+        font-size: 0.75rem !important;
+        padding: 10px 14px !important;
+        border-radius: 14px !important;
+        top: 10px !important;
+    }
+
+    /* FIX LONG TEXT */
+    * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
 }
     </style>
 </head>
