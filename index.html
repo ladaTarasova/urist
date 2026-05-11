@@ -355,6 +355,321 @@
                 padding: 1.5rem;
             }
         }
+
+        /* =========================================
+   MOBILE VERSION
+========================================= */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+        overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+        padding: 0.9rem 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        justify-content: space-between;
+    }
+
+    nav a {
+        font-size: 0.92rem;
+    }
+
+    /* HERO */
+    .container {
+        flex-direction: column-reverse;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .text img {
+        max-width: 100%;
+        border-radius: 24px;
+        aspect-ratio: auto;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+        line-height: 1.15;
+        margin-bottom: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.55rem;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 0.98rem;
+    }
+
+    /* SECTIONS */
+    section {
+        margin: 1rem;
+        padding: 1.4rem;
+        border-radius: 24px;
+    }
+
+    /* LISTS */
+    .text ul li,
+    section ul li {
+        font-size: 0.95rem;
+        padding-left: 1.2rem;
+    }
+
+    /* SERVICES */
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .service-card {
+        padding: 1.4rem;
+        border-radius: 22px;
+    }
+
+    .service-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .service-card p {
+        font-size: 0.92rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-price {
+        font-size: 1rem;
+    }
+
+    .btn-card {
+        padding: 0.8rem 1rem;
+        font-size: 0.92rem;
+    }
+
+    /* ADVANTAGES */
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .advantage-item {
+        padding: 1rem;
+        border-radius: 18px;
+        font-size: 0.95rem;
+    }
+
+    /* REVIEWS */
+    .reviews-block {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .review-card {
+        padding: 1.2rem;
+        border-radius: 20px;
+    }
+
+    /* FORM */
+    form {
+        padding: 1.3rem;
+        border-radius: 24px;
+    }
+
+    input,
+    textarea {
+        padding: 0.85rem 1rem;
+        font-size: 16px; /* важно для iPhone */
+        border-radius: 18px;
+    }
+
+    button[type="submit"] {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    /* TOAST */
+    #dynamicToast {
+        width: calc(100% - 24px);
+        font-size: 0.9rem !important;
+        padding: 14px 18px !important;
+        border-radius: 18px !important;
+        top: 15px !important;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE DEVICES
+========================================= */
+@media (max-width: 480px) {
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin: 0.7rem;
+    }
+
+    .service-card {
+        padding: 1.1rem;
+    }
+
+    .review-card,
+    .advantage-item {
+        font-size: 0.9rem;
+    }
+
+    .btn-card,
+    button[type="submit"] {
+        font-size: 0.9rem;
+    }
+
+
+
+    /* =========================================
+   TABLET VERSION
+========================================= */
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    /* HEADER */
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    /* HERO */
+    .container {
+        gap: 2rem;
+        padding: 2.5rem 1.5rem;
+        align-items: center;
+    }
+
+    .text {
+        flex: 1 1 45%;
+    }
+
+    .text img {
+        max-width: 100%;
+        border-radius: 28px;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+        line-height: 1.15;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* SECTIONS */
+    section {
+        margin: 1.5rem;
+        padding: 2rem 1.5rem;
+        border-radius: 28px;
+    }
+
+    /* SERVICES */
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.94rem;
+    }
+
+    /* ADVANTAGES */
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .advantage-item {
+        padding: 1.2rem;
+    }
+
+    /* REVIEWS */
+    .reviews-block {
+        gap: 1.2rem;
+    }
+
+    .review-card {
+        flex: 1 1 calc(50% - 1rem);
+        padding: 1.3rem;
+    }
+
+    /* FORM */
+    form {
+        padding: 1.8rem;
+    }
+
+    input,
+    textarea {
+        font-size: 1rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.95rem 1.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 2rem 1.5rem;
+    }
+}
+}
     </style>
 </head>
 <body>
